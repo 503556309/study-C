@@ -1,0 +1,246 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//计算两个数的和
+int main()
+{
+	int num1 = 0;//c语言语法规定，变量要定义在当前代码块的最前面
+	int num2 = 0;
+	int sum = 0;
+	scanf("%d%d", &num1, &num2);//scanf输入函数，&取地址符号
+	sum = num1 + num2;
+	printf("sum=%d\n", sum);
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//计算两个数的和,用函数
+int add(int x, int y)//int返回类型，add(int x, int y)相当于f(x,y)
+{
+	int z = x + y;
+	return z;
+}
+int main()
+{
+	int num1 = 0;
+	int num2 = 0;
+	int sum = 0;
+	scanf("%d%d", &num1, &num2);//scanf输入函数，&取地址符号
+	sum = add(num1, num2);
+	printf("sum=%d\n", sum);
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#define MAX 10//定义的标识符常量
+int main()
+{
+	int arr[MAX] = {0};
+	printf("%d\n",MAX);
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//枚举变量
+enum sex
+{
+	male,//默认是0
+	female,//默认是1
+	secret,//默认是2
+};
+
+int main()
+{
+	//enum sex s = male;
+	printf("%d\n",male);
+	printf("%d\n", female);
+	printf("%d\n", secret);
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//字符串
+int main()
+{
+	char arr1[] = "abc";//""双引号里的是字符串,arr数组，字符串隐藏了\0，不是字符串内容
+	char arr2[] = {'a','b','c','\0' };//""单引号里的是字符,\0是结束标志（不表现出来）
+	printf("%s\n",arr1);
+	printf("%s\n", arr2);
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//计算字符串长度
+int main()
+{
+	char arr1[] = "abc";
+	char arr2[] = {'a','b','c' };
+	char arr3[] = { 'a','b','c','\0' };
+	printf("%d\n",strlen(arr1));//strlen计算字符串长度，输出3
+	printf("%d\n", strlen(arr2));//输出随机值，因为没有结束标志
+	printf("%d\n", strlen(arr3));
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//水平制表符
+int main()
+{
+	printf("c\t");//  水平制表符\t,输出c+空格
+	printf("c\\t");//  输出c\t
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//输出单引号和双引号
+int main()
+{
+	printf("%c\n",'\'');//  加\转义，不加报错
+	printf("%s\n", "\"");;
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+//数数字符串长度
+//ddd——ddd表示1 - 3个八进制的数字
+//xdd——dd表示1 - 2个十六进制的数字
+int main()
+{
+	printf("%d\n",strlen("c:\test\132\test.c"));//  \t是一个字符，\132是一个字符，132是个八进制数
+	//132转换成10进制数为1*8^2+3*8^1+2*8^0=90,90作为ASCII码代表的字符是Z
+	printf("%c\n", '\132');
+	printf("%c\n", '\x61');//  \x61转换成10进制数为6*16^1+1*16^0=97,97作为ASCII码代表的字符是a
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//if语句
+int main()
+{
+	int input = 0;
+	printf("加入比特\n");
+	printf("你要好好学习么？（1/0） > :");
+	scanf("%d", &input);
+	if (input == 1)
+		printf("好offer\n");
+	else
+		printf("卖红薯\n");
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//while语句
+int main()
+{
+	int line= 0;
+	printf("加入比特\n");
+	while(line<3)
+	{
+		printf("敲一行代码:%d\n",line);
+	    line++;
+	}
+	if(line>=3)
+	printf("好offer\n");
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//数组
+int main()
+{
+	int arr[3] = {1,2,3};//定义一个存放3个整数数字的数组
+	printf("%d\n", arr[2]);//下标的方式访问元素，元素默认从0开始
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//取模
+int main()
+{
+	int a= 5%2;//%取模，余数
+	printf("%d\n", a);//下标的方式访问元素，元素默认从0开始
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//移位操作符
+int main()
+{
+	int a= 1;
+	int b = a << 2;//左移（二进制）2位，000变100
+	printf("%d\n", b);//100转换成10进制为4
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//（2进制）位操作
+int main()
+{
+	int a = 3;//转化为2进制011
+	int b = 5;//转化为2进制101
+	int c = a&b;//&按位与，结果001
+	printf("%d\n", c);//001转换为10进制为1
+	int d = a | b;//|按位或，结果111
+	printf("%d\n", d);//111转换为10进制为7
+	int e = a ^ b;//^按位异或,结果110
+	//对应的二进制相同,则为0
+	//对应的二进制相异,则为1
+	printf("%d\n", e);//111转换为10进制为6
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//单目操作符
+int main()
+{
+	int a = 10;
+	printf("%d\n", a);
+	printf("%d\n", !a);//c语言中0为假，非0为真，！逻辑反操作
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//sizeof
+int main()
+{
+	int a = 10;
+	int arr[10] = { 0 };
+	int num = 0;
+	num = sizeof(arr) / sizeof(arr[0]);
+	printf("%d\n", sizeof(a));//sizeof计算的是变量/类型所占空间的大小，单位是字节
+	printf("%d\n", sizeof(arr));
+	printf("数组元素个数=%d\n", num);//数组元素个数=数组总大小/每个元素的大小
+	return 0;
+}
