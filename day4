@@ -1,0 +1,277 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//if一个语句
+int main()
+{
+	int age = 20;
+	if (age < 18)
+		printf("未成年\n");//啥也没有
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//if两个语句
+int main()
+{
+	int age = 20;
+	if (age < 18)
+		printf("未成年\n");
+	else
+		printf("成年\n");//结果成年
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//if多个语句
+int main()
+{
+	int age = 100;
+	if (age < 18)
+		printf("未成年\n");
+	else if(age>=18 && age < 28)
+		printf("青年\n");
+	else if (age >= 28 && age < 50)
+		printf("壮年\n");
+	else if (age >= 50 && age < 90)
+		printf("老年\n");
+	else 
+		printf("要长寿哦\n");//结果为：要长寿哦
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//if多个语句，代码块
+int main()
+{
+	int age = 12;
+	if (age < 18)
+	{
+        printf("未成年\n");
+	    printf("不能谈恋爱\n");
+	}
+		
+	else
+	{
+		if (age >= 18 && age < 28)
+			printf("青年\n");
+		else if (age >= 28 && age < 50)
+			printf("壮年\n");
+		else if (age >= 50 && age < 90)
+			printf("老年\n");
+		else
+			printf("要长寿哦\n");
+	}
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//else和离他最近的if匹配
+int main()
+{
+	int a = 0;
+	int b = 2;
+	if (a== 1)
+	 if (b == 2)
+        printf("hehe\n");	
+	 else
+	    printf("haha\n");//结果啥也没有
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//
+int main()
+{
+	int a = 0;
+	if (a= 1)//=是赋值，==判断相等
+	{
+		printf("hehe\n");//结果：hehe
+	}
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//判断一个数是否为奇数
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	if (a % 2 == 1)
+		printf("奇数\n");
+	else
+		printf("偶数\n");;
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//输出1-100之间的奇数
+int main()
+{
+	 int a = 1;
+	 while (a < 100)
+	 {
+		 if (a % 2 == 1)
+          printf("%d ",a);
+	     a++;
+	 }
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//switch整型表达式，case进入，break出
+int main()
+{
+	 int day= 0;//必须为整型，不然报错
+	 scanf("%d", &day);
+	 switch (day)
+	 {
+	 case 1://整型常量表达式
+        printf("星期1\n");
+		break;
+	 case 2:
+		printf("星期2\n");
+		break;
+	 case 3:
+		printf("星期3\n");
+		break;
+	 case 4:
+		printf("星期4\n");
+		break;
+	 }
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//switch 一二工作日，三四休息日
+int main()
+{
+	 int day= 0;
+	 scanf("%d", &day);
+	 switch (day)
+	 {
+	 case 1://case后不一定跟break
+	 case 2:
+		printf("工作日\n");
+		break;
+	 case 3:
+	 case 4:
+		printf("休息日\n");
+		break;
+	 }
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//switch 一二工作日，三四休息日
+int main()
+{
+	 int day= 0;
+	 scanf("%d", &day);
+	 switch (day)
+	 {
+	 case 1:
+		printf("工作日\n");
+		break;
+	 case 2:
+		printf("休息日\n");
+		break;
+	 default:
+		 printf("输入错误\n");
+	     break;
+	 }
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//switch 
+int main()
+{
+	 int n= 1;
+	 int m = 2;
+	 switch (n)
+	 {
+	 case 1:m++;
+	 case 2:n++;
+	 case 3:
+		 switch (n)//switch允许嵌套
+		 {
+		 case 1:m++;
+		 case 2:m++;n++;break;
+		 }
+	 case 4:m++;
+		break;
+	 default:
+	     break;
+	 }
+	 printf("m=%d,n=%d",m,n);//m=5,n=3
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//while
+int main()
+{
+	 int n= 1;
+	 while (n < 10)
+	 {
+		 if (n == 5)
+			 break;
+		 printf("%d",n);
+		 n++;
+	 }
+	return 0;//结果：1234
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//while
+int main()
+{
+	 int n= 1;
+	 while (n < 10)
+	 {
+		 n++;
+		 if (n == 5)
+			 continue;
+		 printf("%d ",n);
+	 }
+	return 0;//结果：2 3 4 6 7 8 9 10
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//
+int main()
+{
+	 int ch = getchar();//输入字符
+	 putchar(ch);//输出字符
+	 printf("%c\n", ch);//结果同上
+	 return 0;
+}
+
